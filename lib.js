@@ -26,8 +26,8 @@ const calculateTotals =
   listings =>
     carts => 
       carts.map((person) => ({
-            'customer' : person.customer,
-            'total' : person.items.reduce(
+            customer : person.customer,
+            total : person.items.reduce(
               (total, currentItem) => total + listings.find((listing) => listing.name === currentItem).price,0)
           })
       )
