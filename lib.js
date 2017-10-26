@@ -24,9 +24,14 @@ const listedPrice =
  */
 const calculateTotals =
   listings =>
-    carts => {
-      // TODO
-    }
+    carts => 
+      carts.map((person) => ({
+            'customer' : person.customer,
+            'total' : person.items.reduce(
+              (total, currentItem) => total + listings.find((listing) => listing.name === currentItem).price,0)
+          })
+      )
+  
 
 module.exports = {
   listing,
